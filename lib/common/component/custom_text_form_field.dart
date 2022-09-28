@@ -20,7 +20,7 @@ class CustomTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // border의 기본값 UnderlineInputBorder
-    final baseBorder = OutlineInputBorder(
+    const baseBorder = OutlineInputBorder(
       // 실제 테두리
       borderSide: BorderSide(
         color: INPUT_BORDER_COLOR,
@@ -34,10 +34,10 @@ class CustomTextFormField extends StatelessWidget {
       autofocus: autofocus,
       onChanged: onChanged,
       decoration: InputDecoration(
-        contentPadding: EdgeInsets.all(20),
+        contentPadding: const EdgeInsets.all(20),
         hintText: hintText,
         errorText: errorText,
-        hintStyle: TextStyle(
+        hintStyle: const TextStyle(
           color: BODY_TEXT_COLOR,
           fontSize: 14.0,
         ),
@@ -46,6 +46,7 @@ class CustomTextFormField extends StatelessWidget {
         // 모든 Input 상태의 기본 스타일 세팅
         border: baseBorder,
         // copyWith는 객체의 모든 특성 모두 유지한 상태에서 변경한 것만 변경할 수 있음
+        enabledBorder: baseBorder,
         focusedBorder: baseBorder.copyWith(
             borderSide: baseBorder.borderSide.copyWith(color: PRIMARY_COLOR)),
       ),
